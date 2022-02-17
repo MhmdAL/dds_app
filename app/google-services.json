@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "533410049035",
+    "project_id": "ecarrier-fedfd",
+    "storage_bucket": "ecarrier-fedfd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533410049035:android:aaffd52e0c558699eaeb0e",
+        "android_client_info": {
+          "package_name": "com.example.dds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533410049035-5l0k61s6edi1ncv0metdmu9k4e9stud8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbgc7XYieofTtGYdHt2AEBKajmwQhGVRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533410049035-5l0k61s6edi1ncv0metdmu9k4e9stud8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.dds.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_createMissionFragment"
+            app:destination="@id/createMissionFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_trackMissionFragment"
+            app:destination="@id/trackMissionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createMissionFragment"
+        android:name="com.example.dds.CreateMissionFragment"
+        android:label="Create Mission"
+        tools:layout="@layout/fragment_create_mission" >
+        <action
+            android:id="@+id/action_createMissionFragment_to_trackMissionFragment"
+            app:destination="@id/trackMissionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackMissionFragment"
+        android:name="com.example.dds.TrackMissionFragment"
+        android:label="fragment_track_mission"
+        tools:layout="@layout/fragment_track_mission" >
+        <action
+            android:id="@+id/action_trackMissionFragment_to_createMissionFragment"
+            app:destination="@id/createMissionFragment" />
+    </fragment>
+</navigation>

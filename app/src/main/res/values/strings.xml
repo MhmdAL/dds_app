@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">DDS</string>
+    <string name="app_name">eCarrier</string>
+
+    <string name="mission_status_name_no_active_mission">No Active Mission</string>
+    <string name="mission_status_name_in_progress">In Progress</string>
+    <string name="mission_status_name_loading_items">Picking Up Items</string>
+    <string name="mission_status_name_unloading_items">Unloading Items</string>
+
+    <string name="mission_status_desc_no_active_mission">No currently active mission</string>
+    <string name="mission_status_desc_heading_source">Drone is heading towards source station</string>
+    <string name="mission_status_desc_loading_items">Drone is awaiting items at the source station</string>
+    <string name="mission_status_desc_heading_dest">Drone is heading towards destination station</string>
+    <string name="mission_status_desc_unloading_items">Drone is unloading items at the destination station</string>
+
+    <string name="picking_up_items_sender_instruction">Please load your items then click confirm</string>
+    <string name="unloading_items_receiver_instruction">Please unload the items then click confirm</string>
+
 </resources>
