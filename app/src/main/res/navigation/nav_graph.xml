@@ -31,10 +31,15 @@
     <fragment
         android:id="@+id/trackMissionFragment"
         android:name="com.example.dds.TrackMissionFragment"
-        android:label="fragment_track_mission"
-        tools:layout="@layout/fragment_track_mission" >
+        android:label="Track Mission"
+        tools:layout="@layout/fragment_track_mission">
         <action
             android:id="@+id/action_trackMissionFragment_to_createMissionFragment"
             app:destination="@id/createMissionFragment" />
+        <action
+            android:id="@+id/action_trackMissionFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
