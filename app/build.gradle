@@ -44,6 +44,7 @@ dependencies {
     implementation("androidx.navigation:navigation-dynamic-features-fragment:2.4.1")
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
     // Testing Navigation
     androidTestImplementation("androidx.navigation:navigation-testing:2.4.1")

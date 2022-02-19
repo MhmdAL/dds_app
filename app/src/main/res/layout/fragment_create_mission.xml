@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".CreateMissionFragment">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -76,7 +76,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/from_station_spinner" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/start_mission_btn"

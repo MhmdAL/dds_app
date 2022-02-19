@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/Theme.DDS"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -18,13 +19,11 @@
             android:id="@+id/my_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:menu="@menu/menu_bottom_nav"
-            android:background="?attr/colorPrimary"
             android:elevation="4dp"
-            android:theme="@style/Theme.DDS"/>
+            style="@style/Base_ToolbarStyle"
+            app:menu="@menu/menu_bottom_nav" />
 
     </com.google.android.material.appbar.AppBarLayout>
-
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"

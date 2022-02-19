@@ -2,19 +2,21 @@ package com.example.dds
 
 import android.os.Build
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.work.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -24,6 +26,28 @@ import retrofit2.Response
 import java.time.Duration
 
 class TrackMissionFragment : Fragment() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_overflow, menu)
+
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_sign_out -> {
+                Firebase.auth.signOut()
+
+                findNavController().navigate(R.id.action_trackMissionFragment_to_loginFragment)
+            }
+        }
+        return true
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +66,12 @@ class TrackMissionFragment : Fragment() {
         val fab = view.findViewById<FloatingActionButton>(R.id.start_mission_fab)
         fab.setOnClickListener {
             findNavController().navigate(R.id.action_trackMissionFragment_to_createMissionFragment)
+        }
+
+        val swipeLayout = view.findViewById<SwipeRefreshLayout>(R.id.swipe_container);
+        swipeLayout.setOnRefreshListener {
+            fetchActiveMission()
+            swipeLayout.isRefreshing = false;
         }
     }
 
@@ -69,30 +99,38 @@ class TrackMissionFragment : Fragment() {
             val confirmBtn = it.findViewById<Button>(R.id.confirm_btn)
             val startMissionFab = it.findViewById<FloatingActionButton>(R.id.start_mission_fab)
 
-            startMissionFab.visibility = if(mission?.id == null) View.VISIBLE else View.GONE
+            startMissionFab.visibility = if (mission?.id == null) View.VISIBLE else View.GONE
 
             when (mission?.mission_status) {
                 "new_mission" -> {
-                    missionStatusTv.text = resources.getString(R.string.mission_status_name_in_progress)
-                    missionStatusDescTv.text = resources.getString(R.string.mission_status_desc_heading_source)
+                    missionStatusTv.text =
+                        resources.getString(R.string.mission_status_name_in_progress)
+                    missionStatusDescTv.text =
+                        resources.getString(R.string.mission_status_desc_heading_source)
                     missionStatusImg.setImageResource(R.drawable.drone)
                     confirmBtn.visibility = View.GONE
                 }
                 "heading_source" -> {
-                    missionStatusTv.text = resources.getString(R.string.mission_status_name_in_progress)
-                    missionStatusDescTv.text = resources.getString(R.string.mission_status_desc_heading_source)
+                    missionStatusTv.text =
+                        resources.getString(R.string.mission_status_name_in_progress)
+                    missionStatusDescTv.text =
+                        resources.getString(R.string.mission_status_desc_heading_source)
                     missionStatusImg.setImageResource(R.drawable.drone)
                     confirmBtn.visibility = View.GONE
                 }
                 "heading_dest" -> {
-                    missionStatusTv.text = resources.getString(R.string.mission_status_name_in_progress)
-                    missionStatusDescTv.text = resources.getString(R.string.mission_status_desc_heading_dest)
+                    missionStatusTv.text =
+                        resources.getString(R.string.mission_status_name_in_progress)
+                    missionStatusDescTv.text =
+                        resources.getString(R.string.mission_status_desc_heading_dest)
                     missionStatusImg.setImageResource(R.drawable.drone)
                     confirmBtn.visibility = View.GONE
                 }
                 "awaiting_load" -> {
-                    missionStatusTv.text = resources.getString(R.string.mission_status_name_loading_items)
-                    missionStatusDescTv.text = resources.getString(R.string.mission_status_desc_loading_items)
+                    missionStatusTv.text =
+                        resources.getString(R.string.mission_status_name_loading_items)
+                    missionStatusDescTv.text =
+                        resources.getString(R.string.mission_status_desc_loading_items)
                     missionStatusImg.setImageResource(R.drawable.package_loading)
                     confirmBtn.visibility = View.VISIBLE
                     confirmBtn.setOnClickListener {
@@ -104,8 +142,10 @@ class TrackMissionFragment : Fragment() {
                     }
                 }
                 "awaiting_unload" -> {
-                    missionStatusTv.text = resources.getString(R.string.mission_status_name_unloading_items)
-                    missionStatusDescTv.text = resources.getString(R.string.mission_status_desc_unloading_items)
+                    missionStatusTv.text =
+                        resources.getString(R.string.mission_status_name_unloading_items)
+                    missionStatusDescTv.text =
+                        resources.getString(R.string.mission_status_desc_unloading_items)
                     missionStatusImg.setImageResource(R.drawable.package_unloading)
                     confirmBtn.visibility = View.VISIBLE
                     confirmBtn.setOnClickListener {
@@ -117,7 +157,8 @@ class TrackMissionFragment : Fragment() {
                     }
                 }
                 else -> {
-                    missionStatusTv.text = resources.getString(R.string.mission_status_name_no_active_mission)
+                    missionStatusTv.text =
+                        resources.getString(R.string.mission_status_name_no_active_mission)
                     missionStatusDescTv.text = ""
                     missionStatusImg.setImageResource(R.drawable.ic_baseline_email_24)
                     confirmBtn.visibility = View.GONE
