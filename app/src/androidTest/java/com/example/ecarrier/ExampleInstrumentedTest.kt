@@ -1,4 +1,4 @@
-package com.example.dds
+package com.example.ecarrier
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

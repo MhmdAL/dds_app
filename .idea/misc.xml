@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/QU/SDP/Client/Android/app/src/main/res/layout/fragment_create_mission.xml" value="0.264" />
+        <entry key="..\:/QU/SDP/dds_app/app/src/main/res/layout/activity_main.xml" value="0.12083333333333333" />
+        <entry key="..\:/QU/SDP/dds_app/app/src/main/res/layout/fragment_create_mission.xml" value="0.12083333333333333" />
+        <entry key="..\:/QU/SDP/dds_app/app/src/main/res/layout/fragment_login.xml" value="0.136" />
+        <entry key="..\:/QU/SDP/dds_app/app/src/main/res/layout/fragment_track_mission.xml" value="0.152" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

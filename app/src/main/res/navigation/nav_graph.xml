@@ -6,7 +6,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.dds.LoginFragment"
+        android:name="com.example.ecarrier.LoginFragment"
         android:label="Login"
         tools:layout="@layout/fragment_login">
         <action
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/createMissionFragment"
-        android:name="com.example.dds.CreateMissionFragment"
+        android:name="com.example.ecarrier.CreateMissionFragment"
         android:label="Create Mission"
         tools:layout="@layout/fragment_create_mission" >
         <action
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/trackMissionFragment"
-        android:name="com.example.dds.TrackMissionFragment"
+        android:name="com.example.ecarrier.TrackMissionFragment"
         android:label="Track Mission"
         tools:layout="@layout/fragment_track_mission">
         <action

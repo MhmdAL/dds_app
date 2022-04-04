@@ -74,6 +74,19 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/from_station_spinner" />
+
+            <EditText
+                android:id="@+id/recipientIdET"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Recipient Id"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/to_station_spinner"
+                app:layout_constraintStart_toStartOf="@+id/to_station_spinner"
+                app:layout_constraintTop_toBottomOf="@+id/to_station_spinner" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

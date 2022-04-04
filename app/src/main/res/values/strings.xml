@@ -3,16 +3,21 @@
 
     <string name="mission_status_name_no_active_mission">No Active Mission</string>
     <string name="mission_status_name_in_progress">In Progress</string>
-    <string name="mission_status_name_loading_items">Picking Up Items</string>
-    <string name="mission_status_name_unloading_items">Unloading Items</string>
+    <string name="mission_status_name_loading_items_s">Load Your Items</string>
+    <string name="mission_status_name_loading_items_r">Picking Up Items</string>
+    <string name="mission_status_name_awaiting_recipient_s">Awaiting Recipient</string>
+    <string name="mission_status_name_awaiting_recipient_r">Drone Arrived</string>
+    <string name="mission_status_name_unloading_items_s">Unloading Items</string>
+    <string name="mission_status_name_unloading_items_r">Unload Items</string>
 
     <string name="mission_status_desc_no_active_mission">No currently active mission</string>
-    <string name="mission_status_desc_heading_source">Drone is heading towards source station</string>
-    <string name="mission_status_desc_loading_items">Drone is awaiting items at the source station</string>
-    <string name="mission_status_desc_heading_dest">Drone is heading towards destination station</string>
-    <string name="mission_status_desc_unloading_items">Drone is unloading items at the destination station</string>
-
-    <string name="picking_up_items_sender_instruction">Please load your items then click confirm</string>
-    <string name="unloading_items_receiver_instruction">Please unload the items then click confirm</string>
+    <string name="mission_status_desc_heading_source">Drone is heading towards the source station</string>
+    <string name="mission_status_desc_loading_items_s">Drone arrived, please load your items then click confirm</string>
+    <string name="mission_status_desc_loading_items_r">Drone is awaiting items at the source station</string>
+    <string name="mission_status_desc_heading_dest">Drone is heading towards the destination station</string>
+    <string name="mission_status_desc_awaiting_recipient_s">Drone arrived, awaiting recipient</string>
+    <string name="mission_status_desc_awaiting_recipient_r">Drone has arrived, please click confirm when ready</string>
+    <string name="mission_status_desc_unloading_items_s">Recipient is unloading the items</string>
+    <string name="mission_status_desc_unloading_items_r">Please unload your items</string>
 
 </resources>
